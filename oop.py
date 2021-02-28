@@ -159,8 +159,9 @@ class task_10:
 
 print(f"{'10.':6}Override magic method __add__() to perform the additional action as 'multiply' (*) the value"
       f"which is greater than 10. And perform this add (+) of two instances.\n"
-      f"{'':6}A new class with overridden magic method __add__ named task_10"
-      f"{'':6}task_10(2) + task_10(7) = task_10({(task_10(2) + task_10(7)).number})\n")
+      f"{'':6}A new class with overridden magic method __add__ named task_10\n"
+      f"{'':6}task_10(2) + task_10(7) = task_10({(task_10(2) + task_10(7)).number})\n"
+      f"{'':6}task_10(2) + task_10(77) = task_10({(task_10(2) + task_10(77)).number})\n")
 
 # 11. The __call__ method enables Python programmers to write classes
 # where the instances behave like functions and can be called like a function.
@@ -179,7 +180,7 @@ class task_11:
 my_sum = task_11()
 print(f"{'11.':6}The __call__ method enables Python programmers to write classes "
       f"where the instances behave like functions and can be called like a function.\n"
-      f"{'':6}A new class with overridden magic method __call__ named task_11"
+      f"{'':6}A new class with overridden magic method __call__ named task_11\n"
       f"{'':6}my_sum = task_11\n"
       f"{'':6}my_sum(1, 4, 11, 34, -2.3) = {my_sum(1, 4, 11, 34, -2.3)}\n")
 
@@ -209,7 +210,7 @@ order_1 = MyOrder(['a', 'b', 'c'], 'd')
 order_2 = MyOrder([], 'a')
 print(f"{'12.':6}Making Your Objects Truthy or Falsey Using __bool__().\n"
       f"{'':6}Create class MyOrder with cart and customer instance attributes.\n"
-      f"{'':6}Override the __bool__magic method considered to be truthy if the length of the cart list is non-zero.]n"
+      f"{'':6}Override the __bool__magic method considered to be truthy if the length of the cart list is non-zero.\n"
       f"{'':6}order_1 = MyOrder(['a', 'b', 'c'], 'd')\n"
       f"{'':6}bool(order_1) = {bool(order_1)}\n"
       f"{'':6}order_2 = MyOrder([], 'a')\n"
