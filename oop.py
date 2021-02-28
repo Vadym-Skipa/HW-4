@@ -152,7 +152,9 @@ class task_10:
         self.number = number
 
     def __add__(self, other):
-        return task_10(self.number * other.number)
+        if self.number > 10 or other.number > 10:
+            return task_10(self.number * other.number)
+        return task_10(self.number + other.number)
 
 
 print(f"{'10.':6}Override magic method __add__() to perform the additional action as 'multiply' (*) the value"
@@ -167,7 +169,7 @@ print(f"{'10.':6}Override magic method __add__() to perform the additional actio
 
 class task_11:
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self, *args):
         result = 0
         for num in args:
             result += num
