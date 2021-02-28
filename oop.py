@@ -51,10 +51,11 @@ class School:
 
     def __init__(self, school_id, number_of_students=0):
         self._school_id = school_id
-        self.nunber_of_students = number_of_students
+        self.number_of_students = number_of_students
 
     def get_school_id(self):
         return self._school_id
+
 
 print(f"{'5.':6}Create a new class School with get_school_id and number_of_students instance attributes\n")
 
@@ -62,11 +63,11 @@ print(f"{'5.':6}Create a new class School with get_school_id and number_of_stude
 # and will have its own - bus_school_color
 
 
-class School(School, Bus):
+class SchoolBus(School, Bus):
     def __init__(self, school_id, max_speed, mileage=0, seating_capacity=1, bus_school_color="Yellow",
                  number_of_students=0):
-        super(School, self).__init__(school_id, number_of_students)
-        super(Bus, self).__init__(max_speed, mileage, seating_capacity)
+        School.__init__(self, school_id, number_of_students)
+        Bus.__init__(self, max_speed, mileage, seating_capacity)
         self.bus_school_color = bus_school_color
 
 
@@ -117,11 +118,11 @@ class City:
         print(f"A new instance of the class City initialized with the name {name}")
 
     def __new__(cls, name, population):
-        instance = super(City, cls).__new__(cls)
         if population > 1500:
-            return instance
+            return super(City, cls).__new__(cls)
         else:
             print("Your city is too small")
+
     def __str__(self):
         return f"The population of the city {self.name} is {self.population}"
 
@@ -143,6 +144,7 @@ print(f"{'9.':6}Override a printable string representation of the City class "
 
 # 10*. Override magic method __add__() to perform the additional action as 'multiply' (*) the value
 # which is greater than 10. And perform this add (+) of two instances.
+
 
 class task_10:
 
@@ -210,4 +212,3 @@ print(f"{'12.':6}Making Your Objects Truthy or Falsey Using __bool__().\n"
       f"{'':6}bool(order_1) = {bool(order_1)}\n"
       f"{'':6}order_2 = MyOrder([], 'a')\n"
       f"{'':6}bool(order_2) = {bool(order_2)}")
-
