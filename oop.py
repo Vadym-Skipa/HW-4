@@ -105,16 +105,16 @@ print(f"{'':6}End of loop\n")
 
 # Magic methods:
 
-# 8. Create class City with name, population instance attributes, return a new instance only when population > 1500,
+# 8-9. Create class City with name, population instance attributes, return a new instance only when population > 1500,
 # otherwise return message: "Your city is too small".
-
+# Override a printable string representation of the City class
+# and return: The population of the city {name} is {population}
 
 class City:
 
     def __init__(self, name, population):
         self.name = name
         self.population = population
-        print(f"A new instance of the class City initialized with the name {name}")
 
     def __new__(cls, name, population):
         if population > 1500:
@@ -126,7 +126,7 @@ class City:
         return f"The population of the city {self.name} is {self.population}"
 
 
-print(f"{'8.':6}Create class City with name, population instance attributes, "
+print(f"{'8-9.':6}Create class City with name, population instance attributes, "
       "return a new instance only when population > 1500, otherwise return message: \"Your city is too small\"\n"
       f"{'':6}Creating Kyiv with a population 3 000 0000")
 Kyiv = City("Kyiv", 3000000)
@@ -134,13 +134,6 @@ print(f"{'':6}{Kyiv}\n"
       f"{'':6}Creating Lisove with a population 1000")
 Lisove = City("Lisove", 1000)
 print(f"{'':6}{Lisove}\n")
-
-# 9. Override a printable string representation of the City class
-# and return: The population of the city {name} is {population}
-
-print(f"{'9.':6}Override a printable string representation of the City class "
-      "and return: The population of the city {name} is {population}\n"
-      f"{'':6}str(Kyiv): {str(Kyiv)}\n")
 
 # 10*. Override magic method __add__() to perform the additional action as 'multiply' (*) the value
 # which is greater than 10. And perform this add (+) of two instances.
