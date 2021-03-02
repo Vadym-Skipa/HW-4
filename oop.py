@@ -122,8 +122,8 @@ class City:
         else:
             return "Your city is too small"
 
-    # def __str__(self):
-    #     return f"The population of the city {self.name} is {self.population}"
+    def __str__(self):
+        return f"The population of the city {self.name} is {self.population}"
 
 
 print(f"{'8.':6}Create class City with name, population instance attributes, "
@@ -137,8 +137,6 @@ print(f"{'':6}{Lisove}\n")
 
 # 9. Override a printable string representation of the City class
 # and return: The population of the city {name} is {population}
-
-City.__str__ = lambda self: f"The population of the city {self.name} is {self.population}"
 
 print(f"{'9.':6}Override a printable string representation of the City class "
       "and return: The population of the city {name} is {population}\n"
