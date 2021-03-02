@@ -15,15 +15,13 @@ print(f"{'1.':6}Create a Vehicle class with max_speed and mileage instance attri
 
 class Bus(Vehicle):
 
-    def __init__(self, max_speed, mileage=0, seating_capacity=1):
-        super(Bus, self).__init__(max_speed, mileage)
-        self._seating_capacity = seating_capacity
-
     def set_seating_capacity(self, seating_capacity):
         self._seating_capacity = seating_capacity
 
     def get_seating_capacity(self):
-        return self._seating_capacity
+        if "_seating_capacity" in self.__dict__:
+            return self._seating_capacity
+        return None
 
 
 print(f"{'2.':6}Create a child class Bus that will inherit all of the variables and methods of the Vehicle class "
@@ -67,7 +65,8 @@ class SchoolBus(School, Bus):
     def __init__(self, school_id, max_speed, mileage=0, seating_capacity=1, bus_school_color="Yellow",
                  number_of_students=0):
         School.__init__(self, school_id, number_of_students)
-        Bus.__init__(self, max_speed, mileage, seating_capacity)
+        Bus.__init__(self, max_speed, mileage)
+        self.set_seating_capacity(seating_capacity)
         self.bus_school_color = bus_school_color
 
 
