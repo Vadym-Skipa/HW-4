@@ -121,22 +121,25 @@ class City:
         if population > 1500:
             return super(City, cls).__new__(cls)
         else:
-            print("Your city is too small")
+            return "Your city is too small"
 
-    def __str__(self):
-        return f"The population of the city {self.name} is {self.population}"
+    # def __str__(self):
+    #     return f"The population of the city {self.name} is {self.population}"
 
 
 print(f"{'8.':6}Create class City with name, population instance attributes, "
       "return a new instance only when population > 1500, otherwise return message: \"Your city is too small\"\n"
       f"{'':6}Creating Kyiv with a population 3 000 0000")
 Kyiv = City("Kyiv", 3000000)
-print(f"{'':6}Creating Lisove with a population 1000")
+print(f"{'':6}{Kyiv}\n"
+      f"{'':6}Creating Lisove with a population 1000")
 Lisove = City("Lisove", 1000)
-print()
+print(f"{'':6}{Lisove}\n")
 
 # 9. Override a printable string representation of the City class
 # and return: The population of the city {name} is {population}
+
+City.__str__ = lambda self: f"The population of the city {self.name} is {self.population}"
 
 print(f"{'9.':6}Override a printable string representation of the City class "
       "and return: The population of the city {name} is {population}\n"
@@ -212,6 +215,6 @@ print(f"{'12.':6}Making Your Objects Truthy or Falsey Using __bool__().\n"
       f"{'':6}Create class MyOrder with cart and customer instance attributes.\n"
       f"{'':6}Override the __bool__magic method considered to be truthy if the length of the cart list is non-zero.\n"
       f"{'':6}order_1 = MyOrder(['a', 'b', 'c'], 'd')\n"
-      f"{'':6}bool(order_1) = {bool(order_1)}\n"
+      f"{'':6}bool(order_1) - {bool(order_1)}\n"
       f"{'':6}order_2 = MyOrder([], 'a')\n"
-      f"{'':6}bool(order_2) = {bool(order_2)}")
+      f"{'':6}bool(order_2) - {bool(order_2)}")
